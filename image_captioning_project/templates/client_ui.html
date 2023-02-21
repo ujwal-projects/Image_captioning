@@ -1,0 +1,23 @@
+<html>
+<head>
+<title>Image Captioning</title>
+</head>
+
+<body bgcolor='white' align="left">
+<h1>Project: Image Captioning  : Demo</h1>
+
+<form method="post" enctype="multipart/form-data" action = "/captioning">
+  <label for="img">Select Image:</label>
+  <input type="file" id="img" name="img" accept="image/*">
+  <input type="submit">
+</form>
+
+<table align="left">
+<tr><td><b><p style="text-align:center;">Status</b> : {{result}}</p></td></tr>
+<tr><td><p style="text-align:center;"><img src="data:image/jpg;base64, {{img | safe}}" width="400" height="300"></p></td></tr>
+<tr><td><b>Predicted (8K model) </b> : {{cnn_lstm_8k_model_caption}}</td></tr>
+<tr><td><b>Predicted (30k model) </b> : {{cnn_lstm_30k_model_caption}}</td></tr>
+</table>
+
+</body>
+</html>
